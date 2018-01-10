@@ -3,11 +3,11 @@ function notify(message) {
   console.log("Displaying message");
   browser.notifications.create("temp-notification",{
     "type": "basic",
-    "iconUrl": browser.extension.getURL("icons/icon48.png"),
+    "iconUrl": browser.extension.getURL("icons/icon96.png"),
     "title": "Video Repeater",
     "message": message
   });
-  setTimeout(function(){ browser.notifications.clear("temp-notification");}, 2000);
+  setTimeout(function(){ browser.notifications.clear("temp-notification");}, 4000);
 }
 
 function onSuccess(id) {
