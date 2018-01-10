@@ -1,5 +1,5 @@
-# FirefoxGoogleImageDownloader
-An Extension to download images from Google Images.
+# VideoRepeater
+An Extension to repeat any video on Website.
 
 
 

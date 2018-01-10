@@ -1,12 +1,13 @@
 
 function notify(message) {
   console.log("Displaying message");
-  browser.notifications.create({
+  browser.notifications.create("temp-notification",{
     "type": "basic",
     "iconUrl": browser.extension.getURL("icons/icon48.png"),
     "title": "Video Repeater",
     "message": message
   });
+  setTimeout(function(){ browser.notifications.clear("temp-notification");}, 2000);
 }
 
 function onSuccess(id) {
@@ -27,7 +28,7 @@ function onButtonClickedFunction(){
   var result=browser.tabs.executeScript({
       file: "repeatStart.js"
     });
-    aray.then(onSuccess, onFail);
+    result.then(onSuccess, onFail);
     return;
   }
   
