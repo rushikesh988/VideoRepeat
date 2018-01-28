@@ -37,7 +37,6 @@ function handleUpdated(tabId, changeInfo, tabInfo) {
 
 
 function handleActivated(activeInfo) {
-  console.log("Tab " + activeInfo.title +" was activated");
   if( LooperTabIds.includes(activeInfo.tabId)  ){
     browser.browserAction.setIcon({path: browser.extension.getURL("icons/icon96.png")});
   } 
@@ -63,7 +62,6 @@ function onButtonClickedFunction(){
         }).then(response => {
         console.log("Video Repeat Turned OFF:"+ response.response);
         LooperTabIds = LooperTabIds.filter(item => ![tab.id].includes(item))
-        //console.log(LooperTabIds);
         notify("Videos on" +tab.title + " will not repeat ");
         browser.browserAction.setIcon({path: browser.extension.getURL("icons/icon96disabled.png")}); 
       }).catch(onError);
@@ -75,7 +73,6 @@ function onButtonClickedFunction(){
       }).then(response => {
       console.log("Video Repeat Turned ON:"+ response.response);
       LooperTabIds[LooperTabIds.length]=tab.id;
-      //console.log(LooperTabIds);
       notify("Videos on" +tab.title + " will auto repeat from now");
       browser.browserAction.setIcon({path: browser.extension.getURL("icons/icon96.png")}); 
     }).catch(onError);
@@ -95,7 +92,6 @@ function onButtonClickedFunction(){
       }).then(response => {
       console.log("Video Repeat Turned ON:"+ response.response);
       LooperTabIds[LooperTabIds.length]=tab.id;
-      //console.log(LooperTabIds);
       notify("Videos on" +tab.title + " will auto repeat from now");
       browser.browserAction.setIcon({path: browser.extension.getURL("icons/icon96.png")}); 
     }).catch(onError);

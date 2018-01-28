@@ -25,13 +25,15 @@
         }
          return true;
     }
-      catch{
-        return false;
+    catch(error) {
+      console.log("Error in SetVideoOnRepeat "+ error);
+      return false;
       }
   }
 
   function SetVideoOffRepeat(){
     console.log("Running Code for turning off video repeater");
+    try{
     var myVideo=document.getElementsByTagName("video");
     var i=0;
     while(i<myVideo.length){
@@ -47,7 +49,12 @@
     i++;
     }
     return true;
+  }
+  catch(error) {
+    console.log("Error in SetVideoOffRepeat "+ error);
+    return false;
     }
+  }
 
 
 function getFavicon(){
