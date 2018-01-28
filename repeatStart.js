@@ -2,7 +2,6 @@
   if (window.hasRun) {
     return;
   }
-  console.log(browser.getFavicon)
   window.hasRun = true;
 
 
